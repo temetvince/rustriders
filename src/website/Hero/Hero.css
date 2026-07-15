@@ -1,0 +1,130 @@
+/* The hero sits over a dark photograph in both editions, so it pins a
+   dark-context palette regardless of the reader's edition: light ink, a bright
+   rust accent, and light-on-dark buttons. Without this, the light edition would
+   paint dark ink over the dark scrim and vanish. */
+.hero {
+  --ink: #f4ece0;
+  --ink-soft: #d8cdbb;
+  --rule: #8a8172;
+  --accent: #f2854a;
+  --accent-hover: #f79a68;
+  --on-accent: #140f09;
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: min(78vh, 620px);
+  padding: var(--space-6) var(--gutter);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* The backdrop is decorative atmosphere. A heavy scrim — flat plus a
+   left-weighted gradient — keeps light type clear of the photo's bright
+   sunburst, which the content column is laid out to avoid. */
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 8, 5, 0.86) 0%,
+      rgba(10, 8, 5, 0.72) 45%,
+      rgba(10, 8, 5, 0.55) 100%
+    ),
+    linear-gradient(rgba(10, 8, 5, 0.35), rgba(10, 8, 5, 0.72));
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-logo {
+  width: 6.5rem;
+  height: 6.5rem;
+  border: 1px solid var(--rule);
+  object-fit: cover;
+  margin-bottom: var(--space-3);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.3rem, 5.6vw, 4rem);
+  line-height: 1.02;
+  text-wrap: balance;
+  max-width: 18ch;
+  color: var(--ink);
+}
+
+.hero-deck {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+  margin-top: var(--space-3);
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin-top: var(--space-4);
+}
+
+.hero-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  background: rgba(10, 8, 5, 0.45);
+}
+
+.hero-chip-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero-chip-value {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 0;
+    padding: var(--space-5) var(--gutter);
+  }
+}

@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+/* The site ships in two editions and follows the reader's system preference:
+   a dark "night raid" edition for readers who prefer dark (the brand default),
+   and a light "concrete" edition for everyone else. Everything colour-dependent
+   is a custom property declared twice — once here for the dark edition, once in
+   the light media block below. Anything that hardcodes a colour outside these
+   two blocks will only half-swap between editions. */
+:root {
+  color-scheme: dark;
+
+  /* Layout rhythm. Every band on the page is `--page-width` wide inside
+     `--gutter` padding, so section headings, cards, and hero content share one
+     left edge. Prose is held to `--measure` inside that container rather than
+     being centred in a narrower one — narrowing the container is what breaks
+     the alignment. */
+  --page-width: 1120px;
+  --gutter: 1.5rem;
+  --measure: 42rem;
+
+  /* Three faces, three jobs, no overlap. Display sets headlines and the
+     wordmark; body carries every passage meant to be read; mono is reserved for
+     the furniture — stat labels, chips, captions, buttons. */
+  --font-display: 'Oswald', 'Arial Narrow', Impact, sans-serif;
+  --font-body: 'Barlow', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', Courier, monospace;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+
+  /* Dark edition — warm near-blacks, never a neutral grey. `--surface-sunken`
+     is the darkest stock and `--surface-raised` the lightest, so boxed items
+     sit above the sheet and strips sink below it. */
+  --surface: #15120e;
+  --surface-alt: #1c1712;
+  --surface-sunken: #0e0c09;
+  --surface-raised: #241d16;
+
+  /* Ink, warmed so it reads as weathered paper rather than a monitor's white.
+     `--ink-faint` is set light enough to clear WCAG AA against
+     `--surface-raised`, the lightest stock it prints on. */
+  --ink: #f4ece0;
+  --ink-soft: #cdbfab;
+  --ink-faint: #9d8f79;
+
+  /* Rules: `--rule` is a visible hairline, `--rule-soft` a light separator.
+     Always draw rules with these, never with `--ink` — a hairline at full ink
+     strength glares against the dark sheet. */
+  --rule: #7a7161;
+  --rule-soft: #3a332a;
+
+  /* The one spot colour: rust-fire orange, pulled from the logo and the
+     sunset in the hero. In the dark edition it is the bright element — light
+     type on the sheet, and a dark label when it fills a button. */
+  --accent: #f2854a;
+  --accent-hover: #f79a68;
+  --on-accent: #140f09;
+
+  --header-bg: rgba(21, 18, 14, 0.92);
+}
+
+/* Light edition — sun-bleached concrete and dust. It serves readers whose
+   system asks for light, and is measured to the same WCAG AA bar as the dark
+   edition. Under `forced-colors` the OS substitutes its own palette regardless;
+   `color-scheme` is what it actually honours. */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+
+    --surface: #e7e0d3;
+    --surface-alt: #ded6c6;
+    --surface-sunken: #d2c9b6;
+    --surface-raised: #f1ece1;
+
+    --ink: #1a1510;
+    --ink-soft: #4a4238;
+    --ink-faint: #5a5144;
+
+    --rule: #463f34;
+    --rule-soft: #c2b8a2;
+
+    /* In the light edition the rust deepens so it stays legible on the pale
+       stock, both as link type and as a button fill under light labels. */
+    --accent: #993813;
+    --accent-hover: #7e2d0d;
+    --on-accent: #f7f2e8;
+
+    --header-bg: rgba(231, 224, 211, 0.92);
+  }
+}
+
+/* Narrowing the gutter once here re-flows the header, hero, every section, and
+   the footer together. */
+@media (max-width: 720px) {
+  :root {
+    --gutter: 1rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  min-height: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Buttons are set in mono with a stencil-label feel: square corners, heavy
+   tracking, no shadow. */
+.button {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.95rem 1.6rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+.button-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--on-accent);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--rule);
+}
+
+.button-secondary:hover {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+/* One boxed-item shell for every grid on the page: a hairline frame with a
+   heavy rust top rule and square corners. Content differentiates the boxes;
+   the container never does. */
+.card {
+  background: var(--surface-raised);
+  border: 1px solid var(--rule-soft);
+  border-top: 3px solid var(--accent);
+  padding: var(--space-3);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-1);
+}
+
+.card p {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  text-transform: none;
+}
+
+/* Shared card grid. Override `--card-min` to change the column count; the gap
+   and wrapping behaviour stay constant across sections. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-min, 17rem), 1fr));
+  gap: var(--space-3);
+  list-style: none;
+}
+
+/* Small mono label above a heading — a kicker, in editorial terms. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
