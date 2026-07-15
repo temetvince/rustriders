@@ -131,7 +131,7 @@ export const features = [
   {
     title: 'Spawnable NPC Bases',
     description:
-      'A low-pop map can go quiet — so it does not. Raidable NPC bases spawn as fresh objectives whenever the server needs content, giving you loot to fight for even when the online count is small.',
+      'A low-pop map can go quiet. Raidable NPC bases spawn as fresh objectives, giving you loot to fight for even when the online count is small.',
     iconPaths: [
       'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z',
       'M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z',
