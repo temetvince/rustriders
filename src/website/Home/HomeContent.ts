@@ -42,7 +42,7 @@ export const heroDeck =
 /** Quick-fact chips in the hero, in display order. */
 export const heroChips = [
   { label: 'Region', value: 'North America' },
-  { label: 'Access', value: 'Premium' },
+  { label: 'Fair Play', value: 'Premium' },
   { label: 'Mode', value: 'Vanilla+' },
   { label: 'Wipe', value: 'Monthly Map' },
   { label: 'Team', value: 'Max 3' },
@@ -159,14 +159,21 @@ export const fairPlayHeadline = 'Fair fights, by design';
 
 /** Body paragraphs for the fair-play section, in reading order. */
 export const fairPlayParagraphs = [
-  'The fastest way to kill a Rust server is one cheater nobody catches. A wall-hacker or a scripter turns every fight into a coin flip, and once players stop trusting the fights, they stop logging in. We would rather solve that at the door than chase it around the map afterwards.',
-  'RustRiders is a premium server, and that is the whole point. Getting in costs a little, so when a cheater is banned they cannot just spin up a free throwaway account and be back by dinner. Coming back costs them real money, every single time — a small, one-time barrier for you, and an expensive, repeating one for them. Most never bother.',
-  'What is left is the server we actually want to play on: fights decided by aim, positioning, and nerve, not by whatever someone downloaded. Reports go to admins who are online and have skin in the game, and our numbers are public on BattleMetrics for anyone who wants to check them.',
+  'Nothing kills a Rust server faster than a cheater nobody catches. So RustRiders runs with Rust’s Premium mode switched on — Facepunch’s own feature for keeping disposable cheat accounts out.',
+  'Premium asks every account that connects to be a real, invested Steam account instead of a free throwaway. It is not a silver bullet and it does not replace moderation — our admins are active and play here too — but Facepunch built it for exactly this, and it means the fights you lose were lost to a person, not a program.',
 ] as const;
 
-/** Pulled callout printed inside the fair-play section. */
+/**
+ * Facepunch's own words on Premium servers, printed as the section's callout.
+ * Quoted verbatim from {@link fairPlaySourceUrl}; keep it identical to the
+ * source, and update it if that page's wording changes.
+ */
 export const fairPlayCallout =
-  'A ban should cost something. Here it costs a cheater the price of admission — every time they try to come back.';
+  '“An experimental way to filter out cheat users and create a better experience for legit players.” — Facepunch';
+
+/** Facepunch's official announcement of Premium servers, linked as the source. */
+export const fairPlaySourceUrl =
+  'https://rust.facepunch.com/news/premium-servers';
 
 /** Standfirst beneath the "The Server" heading. */
 export const glanceLede = 'The settings that define a wipe, at a glance.';
@@ -182,7 +189,7 @@ export const glance = [
   {
     label: 'Fair Play',
     value:
-      'Premium access — a paid barrier that makes every ban expensive for cheaters, so the ones we remove do not come back.',
+      'Rust Premium mode is on (server.premium) — Facepunch’s built-in filter against disposable cheat accounts.',
   },
   {
     label: 'Population',

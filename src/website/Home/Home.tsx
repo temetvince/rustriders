@@ -83,7 +83,17 @@ export default function Home() {
               <blockquote className='callout'>
                 <p>{content.fairPlayCallout}</p>
               </blockquote>
-              <p>{content.fairPlayParagraphs[2]}</p>
+              <p className='source-note'>
+                Straight from the source:{' '}
+                <a
+                  href={content.fairPlaySourceUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Facepunch on Premium servers
+                </a>
+                .
+              </p>
             </div>
           </div>
         </section>

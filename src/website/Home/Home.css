@@ -48,6 +48,13 @@ section[id] {
   color: var(--ink);
 }
 
+/* A small attribution line pointing at an external source. */
+.source-note {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
 /* A line lifted from the pitch and set off with a rust bar, the way a feature
    breaks a long passage. */
 .callout {

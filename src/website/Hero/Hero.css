@@ -1,14 +1,10 @@
-/* The hero sits over a dark photograph in both editions, so it pins a
-   dark-context palette regardless of the reader's edition: light ink, a bright
-   rust accent, and light-on-dark buttons. Without this, the light edition would
-   paint dark ink over the dark scrim and vanish. */
+/* The hero sits over a busy dark photograph, so it lifts the two muted tokens —
+   the deck's soft ink and the rule used on chips and borders — a step brighter
+   than the body values, which are tuned for solid surfaces. Everything else
+   inherits the page's dark palette unchanged. */
 .hero {
-  --ink: #f4ece0;
   --ink-soft: #d8cdbb;
   --rule: #8a8172;
-  --accent: #f2854a;
-  --accent-hover: #f79a68;
-  --on-accent: #140f09;
 
   position: relative;
   overflow: hidden;

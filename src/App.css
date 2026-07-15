@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
 
-/* The site ships in two editions and follows the reader's system preference:
-   a dark "night raid" edition for readers who prefer dark (the brand default),
-   and a light "concrete" edition for everyone else. Everything colour-dependent
-   is a custom property declared twice — once here for the dark edition, once in
-   the light media block below. Anything that hardcodes a colour outside these
-   two blocks will only half-swap between editions. */
+/* The site is dark by design — a single "night raid" edition, the same for
+   every reader regardless of system preference. `color-scheme: dark` commits to
+   it, so the browser paints form controls and scrollbars dark to match, and a
+   `forced-colors` reader still gets a dark sheet. Every colour is a custom
+   property declared once here; anything that hardcodes a colour outside this
+   block will not theme with the rest. */
 :root {
   color-scheme: dark;
 
@@ -61,36 +61,6 @@
   --on-accent: #140f09;
 
   --header-bg: rgba(21, 18, 14, 0.92);
-}
-
-/* Light edition — sun-bleached concrete and dust. It serves readers whose
-   system asks for light, and is measured to the same WCAG AA bar as the dark
-   edition. Under `forced-colors` the OS substitutes its own palette regardless;
-   `color-scheme` is what it actually honours. */
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-
-    --surface: #e7e0d3;
-    --surface-alt: #ded6c6;
-    --surface-sunken: #d2c9b6;
-    --surface-raised: #f1ece1;
-
-    --ink: #1a1510;
-    --ink-soft: #4a4238;
-    --ink-faint: #5a5144;
-
-    --rule: #463f34;
-    --rule-soft: #c2b8a2;
-
-    /* In the light edition the rust deepens so it stays legible on the pale
-       stock, both as link type and as a button fill under light labels. */
-    --accent: #993813;
-    --accent-hover: #7e2d0d;
-    --on-accent: #f7f2e8;
-
-    --header-bg: rgba(231, 224, 211, 0.92);
-  }
 }
 
 /* Narrowing the gutter once here re-flows the header, hero, every section, and
