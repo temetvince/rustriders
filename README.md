@@ -2,9 +2,21 @@
 
 The landing page for **RustRiders**, a low-population North American Rust
 server. It is a single-page React + TypeScript site that pitches the server and
-points players to the Discord. All page copy and section data live in
-[`src/website/Home/Home.tsx`](src/website/Home/Home.tsx) and
-[`src/website/Home/HomeContent.ts`](src/website/Home/HomeContent.ts).
+points players to the Discord.
+
+The page makes a single argument, and its sections are the beats of that
+argument in order:
+
+1. **The Campaign** — the server runs in six-month campaigns, and every player
+   starts one with nothing.
+2. **No Tech Tree** — so this is how progression is earned rather than bought.
+   Find the item, then research it.
+3. **The World** — and this is what is out there to find.
+4. **Join Up** — the closing call to action.
+
+Copy that contradicts that line does not belong on the page, wherever it sits.
+The composition lives in [`Home.tsx`](src/website/Home/Home.tsx); every word
+lives under [`src/website/Home/content/`](src/website/Home/content/).
 
 ## Running Locally
 
@@ -53,15 +65,38 @@ Two things are worth knowing before you deploy:
 ## Editing server details
 
 Every fact the page states — the Discord invite, the wipe cadence, team size,
-the feature list, and the connect string — lives as an exported constant in
-[`src/website/Home/HomeContent.ts`](src/website/Home/HomeContent.ts). Change the
-copy there, not in the markup.
+and the feature list — lives as an exported constant under
+[`src/website/Home/content/`](src/website/Home/content/). Change the copy there,
+not in the markup. [`HomeContent.ts`](src/website/Home/HomeContent.ts)
+re-exports all of it as one module, which is what the page imports.
 
-These values are most likely to need updating between wipes:
+There is one module per part of the page:
 
-1. **`discordUrl`** — the invite the header, hero, and footer all link to.
+| Module | Holds |
+| --- | --- |
+| `site.ts` | Brand, Discord and BattleMetrics links, header nav, footer. |
+| `hero.ts` | The banner headline, deck, quick-fact chips, and buttons. |
+| `progression.ts` | The six-month campaign and the no-tech-tree rule. |
+| `features.ts` | What the world holds, as the card grid in "The World". |
+| `join.ts` | The closing call to action. |
+
+Three claims are stated in more than one place, so change them together:
+
+1. **The campaign cadence** appears as a hero chip, in the hero deck, across
+   the whole campaign section, and in its cadence list. Blueprints wipe at the
+   first wipe of January and of July; the map wipes monthly in between.
+2. **The no-tech-tree rule** appears as a hero chip, in the hero deck, and in
+   its own section.
+3. **Nothing is for sale** is the page's spine. It is stated in the hero deck
+   and in the `Pay-To-Win` chip, and every card in "The World" describes
+   something found rather than bought.
+
+These values are most likely to need updating between campaigns:
+
+1. **`discordUrl`** — the invite the header, hero, footer, and closing section
+   all link to.
 2. **`battlemetricsUrl`** — the server's public BattleMetrics page, linked from
-   the footer and the "The Server" section as a live-status signal.
+   the footer and the closing section as a live-status signal.
 
 ## Swapping the images
 

@@ -48,13 +48,6 @@ section[id] {
   color: var(--ink);
 }
 
-/* A small attribution line pointing at an external source. */
-.source-note {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--ink-faint);
-}
-
 /* A line lifted from the pitch and set off with a rust bar, the way a feature
    breaks a long passage. */
 .callout {
@@ -69,48 +62,19 @@ section[id] {
   color: var(--ink);
 }
 
-/* Server settings, set as a two-column reference list that collapses to a
-   stack on narrow screens. */
-.glance {
-  display: grid;
-  grid-template-columns: 14rem 1fr;
-  border-top: 1px solid var(--rule-soft);
+/* A full-width block — a fact list or a card grid — set off from the narrower
+   prose column above it. The blocks carry no spacing of their own, so the page
+   supplies the gap wherever it stacks one under a pitch. */
+.section-block {
+  margin-top: var(--space-4);
 }
 
-.glance dt {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  padding: var(--space-2) var(--space-2) var(--space-2) 0;
-  border-bottom: 1px solid var(--rule-soft);
-}
-
-.glance dd {
-  color: var(--ink-soft);
-  padding: var(--space-2) 0;
-  border-bottom: 1px solid var(--rule-soft);
-}
-
-@media (max-width: 640px) {
-  .glance {
-    grid-template-columns: 1fr;
-  }
-
-  .glance dt {
-    border-bottom: none;
-    padding-bottom: 0.25rem;
-  }
-
-  .glance dd {
-    padding-top: 0.25rem;
-  }
-}
-
-/* The BattleMetrics link sits below the settings list. */
-.server-status-cta {
+/* The closing call to action: the same button pair as the hero, on the page's
+   last band. Wraps to a stack when the two will not sit side by side. */
+.join-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
   margin-top: var(--space-4);
 }
 
