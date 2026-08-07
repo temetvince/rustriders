@@ -1,9 +1,8 @@
 /**
  * Copy for "The World" section — what is out on the map waiting to be found,
- * and the one rule that decides how long what you build survives. This section
- * is the payoff for the argument the page has been making, so every card
- * describes something a player goes and finds rather than something the server
- * hands over or sells.
+ * and how long the map gives you to take it. This section is the payoff for the
+ * argument the page has been making, so every card describes something a player
+ * goes and finds rather than something the server hands over or sells.
  */
 
 /** Standfirst beneath "The World" heading. */
@@ -63,6 +62,16 @@ export const features = [
     ],
   },
   {
+    title: 'Ten-Minute Crate Hacks',
+    description:
+      'Locked crates unlock in ten minutes instead of fifteen. Still long enough that every player on the map knows where you are standing, just short enough not to waste your time.',
+    iconPaths: [
+      'M10 2h4',
+      'M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16z',
+      'M12 14l3-3',
+    ],
+  },
+  {
     title: 'Raidable NPC Bases',
     description:
       'NPC bases spawn across the map at a range of difficulties, from something a fresh spawn can chip at to a fortress worth a full team. They are objectives with loot behind them, whether three people are online or thirty.',
@@ -71,11 +80,5 @@ export const features = [
       'M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z',
       'M12 12h.01',
     ],
-  },
-  {
-    title: 'Half Decay',
-    description:
-      'Structures decay at half the usual rate, so the base you earned survives a workday and a weekend away. Upkeep still matters. It just does not punish you for having a life.',
-    iconPaths: ['M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', 'M9 12l2 2 4-4'],
   },
 ] as const;
