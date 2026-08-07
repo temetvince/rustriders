@@ -23,9 +23,9 @@ export const brand = 'RustRiders';
  * the `id` of a section on the page, or the link scrolls nowhere.
  */
 export const navItems = [
-  { label: 'The Campaign', path: '#campaign' },
-  { label: 'No Tech Tree', path: '#no-tech-tree' },
   { label: 'The World', path: '#world' },
+  { label: 'The Wipe', path: '#wipe' },
+  { label: 'Join Up', path: '#join' },
 ] as const;
 
 /** Call-to-action button in the sticky header. */

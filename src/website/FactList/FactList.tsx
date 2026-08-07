@@ -10,7 +10,7 @@ import type FactListProps from './FactListProps';
  * reads each value as the answer to its label.
  *
  * The list carries no spacing of its own. A page that needs it set off from
- * what precedes it should wrap it, the way the campaign section does.
+ * what precedes it should wrap it, the way the wipe section does.
  */
 export default function FactList(props: FactListProps) {
   return (

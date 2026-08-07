@@ -2,7 +2,6 @@ import './Home.css';
 
 import headerImg from '../../assets/header.jpg';
 import logoImg from '../../assets/logo.jpg';
-import FactList from '../FactList/FactList';
 import FeatureGrid from '../FeatureGrid/FeatureGrid';
 import Header from '../Header/Header';
 import Hero from '../Hero/Hero';
@@ -10,12 +9,11 @@ import * as content from './HomeContent';
 
 /**
  * The complete landing page for RustRiders. The page makes one argument, and
- * the sections are its beats in order: a banner hero, the six-month campaign
- * that resets everybody to nothing, the no-tech-tree rule that is how
- * progression is earned rather than bought, what the world holds for a player
- * to find, and the invitation to join. All copy and section data come from
- * {@link module:HomeContent} and are passed down to purely presentational
- * components; this module only composes.
+ * the sections are its beats in order: a banner hero, the monthly full wipe
+ * that puts everybody back at nothing together, what the world holds for a
+ * player to find inside a wipe, and the invitation to join. All copy and
+ * section data come from {@link module:HomeContent} and are passed down to
+ * purely presentational components; this module only composes.
  *
  * Sections alternate between the base and `section-alt` backgrounds. Adding or
  * removing one means re-checking that no two `section-alt` bands end up
@@ -42,45 +40,6 @@ export default function Home() {
         />
 
         <section
-          id='campaign'
-          className='section'
-        >
-          <div className='section-inner'>
-            <p className='eyebrow'>The Campaign</p>
-            <h2>{content.campaignHeadline}</h2>
-            <div className='pitch'>
-              <p className='pitch-lead'>{content.campaignParagraphs[0]}</p>
-              <p>{content.campaignParagraphs[1]}</p>
-              <blockquote className='callout'>
-                <p>{content.campaignCallout}</p>
-              </blockquote>
-              <p>{content.campaignParagraphs[2]}</p>
-            </div>
-            <div className='section-block'>
-              <FactList facts={content.campaignCadence} />
-            </div>
-          </div>
-        </section>
-
-        <section
-          id='no-tech-tree'
-          className='section section-alt'
-        >
-          <div className='section-inner'>
-            <p className='eyebrow'>No Tech Tree</p>
-            <h2>{content.noTechTreeHeadline}</h2>
-            <div className='pitch'>
-              <p className='pitch-lead'>{content.noTechTreeParagraphs[0]}</p>
-              <p>{content.noTechTreeParagraphs[1]}</p>
-              <blockquote className='callout'>
-                <p>{content.noTechTreeCallout}</p>
-              </blockquote>
-              <p>{content.noTechTreeParagraphs[2]}</p>
-            </div>
-          </div>
-        </section>
-
-        <section
           id='world'
           className='section'
         >
@@ -93,8 +52,26 @@ export default function Home() {
         </section>
 
         <section
-          id='join'
+          id='wipe'
           className='section section-alt'
+        >
+          <div className='section-inner'>
+            <p className='eyebrow'>The Wipe</p>
+            <h2>{content.wipeHeadline}</h2>
+            <div className='pitch'>
+              <p className='pitch-lead'>{content.wipeParagraphs[0]}</p>
+              <p>{content.wipeParagraphs[1]}</p>
+              <blockquote className='callout'>
+                <p>{content.wipeCallout}</p>
+              </blockquote>
+              <p>{content.wipeParagraphs[2]}</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id='join'
+          className='section'
         >
           <div className='section-inner'>
             <p className='eyebrow'>Join Up</p>

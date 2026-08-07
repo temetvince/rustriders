@@ -7,12 +7,10 @@ points players to the Discord.
 The page makes a single argument, and its sections are the beats of that
 argument in order:
 
-1. **The Campaign** — the server runs in six-month campaigns, and every player
-   starts one with nothing.
-2. **No Tech Tree** — so this is how progression is earned rather than bought.
-   Find the item, then research it.
-3. **The World** — and this is what is out there to find.
-4. **Join Up** — the closing call to action.
+1. **The Wipe** — the server wipes fully every month, map and blueprints
+   together, so everybody starts over on the same day.
+2. **The World** — and this is what is out there to find inside a wipe.
+3. **Join Up** — the closing call to action.
 
 Copy that contradicts that line does not belong on the page, wherever it sits.
 The composition lives in [`Home.tsx`](src/website/Home/Home.tsx); every word
@@ -76,22 +74,20 @@ There is one module per part of the page:
 | --- | --- |
 | `site.ts` | Brand, Discord and BattleMetrics links, header nav, footer. |
 | `hero.ts` | The banner headline, deck, quick-fact chips, and buttons. |
-| `progression.ts` | The six-month campaign and the no-tech-tree rule. |
+| `wipe.ts` | The monthly full wipe, and the arc of a single month. |
 | `features.ts` | What the world holds, as the card grid in "The World". |
 | `join.ts` | The closing call to action. |
 
-Three claims are stated in more than one place, so change them together:
+Two claims are stated in more than one place, so change them together:
 
-1. **The campaign cadence** appears as a hero chip, in the hero deck, across
-   the whole campaign section, and in its cadence list. Blueprints wipe at the
-   first wipe of January and of July; the map wipes monthly in between.
-2. **The no-tech-tree rule** appears as a hero chip, in the hero deck, and in
-   its own section.
-3. **Nothing is for sale** is the page's spine. It is stated in the hero deck
-   and in the `Pay-To-Win` chip, and every card in "The World" describes
-   something found rather than bought.
+1. **The wipe cadence** appears as two hero chips, in the hero deck, across the
+   whole wipe section, and in its arc list. The map and the blueprints wipe
+   together, once a month, and nothing survives between wipes.
+2. **Nothing is for sale** is the page's spine. It is stated in the hero
+   headline, in the deck, and in the `Pay-To-Win` chip, and every card in "The
+   World" describes something found rather than bought.
 
-These values are most likely to need updating between campaigns:
+These values are most likely to need updating between wipes:
 
 1. **`discordUrl`** — the invite the header, hero, footer, and closing section
    all link to.
