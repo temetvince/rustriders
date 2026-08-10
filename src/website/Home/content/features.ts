@@ -1,8 +1,9 @@
 /**
  * Copy for "The World" section — what is out on the map waiting to be found,
- * and how long the map gives you to take it. This section is the payoff for the
- * argument the page has been making, so every card describes something a player
- * goes and finds rather than something the server hands over or sells.
+ * and the server settings that decide what it costs to take. This section is
+ * the payoff for the argument the page has been making, so a card describes
+ * something a player goes and earns, never something the server hands over or
+ * sells.
  */
 
 /** Standfirst beneath "The World" heading. */
@@ -41,25 +42,10 @@ export const features = [
     ],
   },
   {
-    title: 'Boats And Cars In The Wild',
+    title: 'Boats, Cars, And Snowmobiles In The Wild',
     description:
-      'Boats wait along the shoreline and cars sit out on the roads. Every one of them is first come, first served — the only cost is the fuel and the risk of driving it home.',
+      'Boats wait along the shoreline and cars sit out on the roads. Every one of them is first come, first served — the only cost is the fuel and the risk of driving it home. The snowmobile is the odd one out: it runs at full speed in every biome, so one found in the arctic will carry you across desert, forest, and grassland just as happily.',
     iconPaths: ['M12 4v11', 'M13 6l5 7h-5', 'M3 16h18', 'M5 16l1.5 4h11L19 16'],
-  },
-  {
-    title: 'All-Terrain Snowmobile',
-    description:
-      'The snowmobile runs in every biome, not just snow. Take it through desert, forest, and grassland at full speed — no more parking it at the treeline.',
-    iconPaths: [
-      'M2 12h20',
-      'M12 2v20',
-      'm4.93 4.93 14.14 14.14',
-      'm19.07 4.93-14.14 14.14',
-      'M12 2l2.4 2.4M12 2 9.6 4.4',
-      'M12 22l2.4-2.4M12 22 9.6 19.6',
-      'M2 12l2.4-2.4M2 12l2.4 2.4',
-      'M22 12l-2.4-2.4M22 12l-2.4 2.4',
-    ],
   },
   {
     title: 'Ten-Minute Crate Hacks',
@@ -79,6 +65,15 @@ export const features = [
       'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z',
       'M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z',
       'M12 12h.01',
+    ],
+  },
+  {
+    title: 'Player Raids Cost Double',
+    description:
+      "Breaching another team's structures and deployables takes twice the explosives. Players, mounts, and traps are untouched, so fights and roams play exactly as they always have. The NPC bases are exempt, which is the whole point: with half decay you hold your own base for less, the bots are the cheap raid, and hitting a real team stays a deliberate choice rather than a Tuesday-night habit.",
+    iconPaths: [
+      'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+      'M13 7l-3 5h4l-3 5',
     ],
   },
 ] as const;

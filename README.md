@@ -78,7 +78,7 @@ There is one module per part of the page:
 | `features.ts` | What the world holds, as the card grid in "The World". |
 | `join.ts` | The closing call to action. |
 
-Two claims are stated in more than one place, so change them together:
+Three claims are stated in more than one place, so change them together:
 
 1. **The wipe cadence** appears as two hero chips, in the hero deck, across the
    whole wipe section, and in its arc list. The map and the blueprints wipe
@@ -86,6 +86,12 @@ Two claims are stated in more than one place, so change them together:
 2. **Nothing is for sale** is the page's spine. It is stated in the hero
    headline, in the deck, and in the `Pay-To-Win` chip, and every card in "The
    World" describes something found rather than bought.
+3. **The raid economy** appears in the `Decay` and `Player Raids` hero chips, in
+   the hero deck, in the `Player Raids Cost Double` card in "The World", and in
+   the `description` meta tag in [`public/index.html`](public/index.html). It is
+   one setting pair, so state it as one: raiding a player's structures and
+   deployables costs double, the NPC raidable bases are exempt, and decay runs
+   at half rate. Players, mounts, and traps are not affected by the raid cost.
 
 These values are most likely to need updating between wipes:
 
