@@ -65,7 +65,9 @@
   font-size: clamp(2.3rem, 5.6vw, 4rem);
   line-height: 1.02;
   text-wrap: balance;
-  max-width: 18ch;
+  /* Wide enough that the headline sets in three lines rather than a tall narrow
+     column. Shortening the headline means re-checking this. */
+  max-width: 26ch;
   color: var(--ink);
 }
 

@@ -35,14 +35,18 @@ module.exports = (_env, argv) => {
 
     /* A real budget, not a silenced warning: exceeding it fails the build.
        Webpack's 244 KiB default counts uncompressed bytes, which no host
-       serves. The entry bundle is ~262 KiB raw but ~82 KiB gzipped and ~71 KiB
-       brotli, so the budget is set against raw size with modest headroom. React
-       and react-router account for nearly all of it. Raise this only after
-       measuring the compressed size, never to make a warning go away. */
+       serves. The entry bundle measures ~223 KiB raw, ~70 KiB gzipped, and
+       ~60 KiB brotli, so the budget is set against raw size with enough
+       headroom that ordinary copy edits do not fail the build.
+
+       React is roughly four fifths of it and is fixed cost; the rest is the
+       site's own copy, which is what grows. Raise this only after measuring the
+       compressed size again, never to make a warning go away — the number a
+       visitor actually downloads is the brotli one. */
     performance: {
       hints: isProduction ? 'error' : false,
-      maxAssetSize: 300 * 1024,
-      maxEntrypointSize: 300 * 1024,
+      maxAssetSize: 270 * 1024,
+      maxEntrypointSize: 270 * 1024,
     },
 
     devServer: {

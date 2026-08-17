@@ -1,0 +1,25 @@
+/* The marker is drawn as a rust dash rather than a list bullet, to match the
+   rules and borders used everywhere else. It is decorative: the `li` still
+   carries the list semantics. */
+.point-list {
+  max-width: var(--measure);
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.point-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--ink-soft);
+}
+
+.point-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 0.7rem;
+  height: 2px;
+  background: var(--accent);
+}

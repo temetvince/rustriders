@@ -1,13 +1,13 @@
 import './Hero.css';
 
+import ActionLinks from '../ActionLinks/ActionLinks';
 import type HeroProps from './HeroProps';
 
 /**
- * The front-page banner: a full-bleed atmospheric backdrop behind the branded
- * logo, a headline, a deck, a row of quick-fact chips, and a pair of
- * call-to-action links. Renders the page's only `h1`, so the composing page
- * must not render another. A call-to-action whose `path` begins with `http`
- * opens in a new tab.
+ * The landing-page banner: a full-bleed backdrop behind the logo mark, the
+ * headline, a deck, a row of quick-fact chips, and the standard button pair.
+ * Renders the page's only `h1`, so the composing page must not render another
+ * and must not also render a {@link PageHeader}.
  */
 export default function Hero(props: HeroProps) {
   return (
@@ -38,30 +38,10 @@ export default function Hero(props: HeroProps) {
             </li>
           ))}
         </ul>
-        <div className='hero-actions'>
-          {props.primaryCta.path.startsWith('http') ?
-            <a
-              href={props.primaryCta.path}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='button button-primary'
-            >
-              {props.primaryCta.label}
-            </a>
-          : <a
-              href={props.primaryCta.path}
-              className='button button-primary'
-            >
-              {props.primaryCta.label}
-            </a>
-          }
-          <a
-            href={props.secondaryCta.path}
-            className='button button-secondary'
-          >
-            {props.secondaryCta.label}
-          </a>
-        </div>
+        <ActionLinks
+          primary={props.primaryCta}
+          secondary={props.secondaryCta}
+        />
       </div>
     </section>
   );

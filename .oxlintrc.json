@@ -44,17 +44,6 @@
     "eslint/max-lines-per-function": "off"
   },
 
-  "overrides": [
-    {
-      // react-router's `<Route element={<Home />} />` is its required API,
-      // so jsx-no-jsx-as-prop cannot be satisfied here. Scoped, not global.
-      "files": ["src/App.tsx"],
-      "rules": {
-        "react-perf/jsx-no-jsx-as-prop": "off"
-      }
-    }
-  ],
-
   "options": {
     "typeAware": true,
     "typeCheck": true,

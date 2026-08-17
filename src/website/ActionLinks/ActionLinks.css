@@ -1,0 +1,8 @@
+/* The button pair. The gap is the only thing holding the two apart, so they
+   stack cleanly the moment the line runs out rather than shrinking. */
+.action-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}

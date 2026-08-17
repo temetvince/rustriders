@@ -44,7 +44,7 @@
   gap: var(--space-1) var(--space-2);
 }
 
-.site-header-nav a {
+.site-header-link {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
@@ -52,12 +52,15 @@
   text-transform: uppercase;
   color: var(--ink-soft);
   text-decoration: none;
-  padding: 0.25rem;
+  padding: 0.35rem 0.15rem;
+  /* The current-page marker is drawn as a transparent border so the link does
+     not move when it becomes current. */
+  border-bottom: 2px solid transparent;
 }
 
-.site-header-nav a:hover {
+.site-header-link:hover {
   color: var(--ink);
-  text-decoration: underline;
+  border-bottom-color: var(--accent);
 }
 
 .site-header-nav .site-header-cta {
@@ -71,9 +74,13 @@
   text-decoration: none;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 860px) {
   .site-header {
     justify-content: center;
     text-align: center;
+  }
+
+  .site-header-nav {
+    justify-content: center;
   }
 }
