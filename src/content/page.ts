@@ -22,14 +22,15 @@ import { battlemetricsUrl, discordUrl } from './site';
 export const page = {
   hero: {
     headline:
-      'A fun PVP server with PVE raidable bases and a mid-wipe catchup feature',
-    deck: 'North American. Full wipe every month, five NPC raidable bases live at all times, and player bases take half damage from a raider. No Pay-to-Win.',
+      'A fun PVP server with NPC raidable bases and a mid-wipe catchup feature',
+    deck: 'The map wipes twice a month and blueprints once per month, and tiered blueprint unlocks are granted for free on a schedule in case you start mid-wipe. Five NPC raidable bases are live at all times. Minis spawn on the roads, bases have half upkeep, and nights are shortened to 10 minutes. No kits or Pay-to-Win.',
 
-    /** Quick facts. Values are display capitals on one line — two words each. */
+    /** Quick facts. Values are display capitals on one line, at most two words. */
     chips: [
       { label: 'Region', value: 'North America' },
       { label: 'Server', value: 'Premium' },
-      { label: 'Wipe', value: 'Full, Monthly' },
+      { label: 'Map', value: 'Twice Monthly' },
+      { label: 'Blueprints', value: 'Monthly' },
       { label: 'Team', value: 'Max 3' },
       { label: 'Tech Tree', value: 'On A Timer' },
       { label: 'Raid Bases', value: 'Five Live' },
@@ -48,7 +49,7 @@ export const page = {
       {
         title: 'Tech Tree On A Timer',
         description:
-          'Free unlocks for the whole server: electrical at one week, workbench 1 at two, workbench 2 at three. Tier 3 stays on the grind. Players who have never connected get it on their first join.',
+          'Free unlocks for the whole server: electronics halfway through the first map, workbench 1 as the second map opens, workbench 2 halfway through that one. Tier 3 remains up to you.',
         iconPaths: [
           'M12 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
           'M5 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
@@ -61,7 +62,7 @@ export const page = {
       {
         title: 'Post, Not Popups',
         description:
-          'Server news arrives as letters in a mailbox, one at a time. Public terminals stand in every safe zone, and a late arrival is owed the whole backlog.',
+          'Server news arrives as letters in a mailbox, one at a time. Public terminals stand in Outpost and Bandit Camp by the recyclers. Never miss server news again!',
         iconPaths: ['M3 5h18v14H3z', 'M3 6l9 7 9-7'],
       },
       {
@@ -73,7 +74,7 @@ export const page = {
       {
         title: 'Five Raidable Bases, Always Up',
         description:
-          'Two easy, two medium, one hard, one expert, one nightmare, live somewhere on the map at every hour of the wipe. Ten designs behind each difficulty.',
+          'One base each of easy, medium, hard, expert and nightmare difficulty live somewhere on the map at every hour of the wipe. Ten designs behind each difficulty.',
         iconPaths: [
           'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z',
           'M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z',
@@ -81,12 +82,14 @@ export const page = {
         ],
       },
       {
-        title: 'Player Bases Take Half Damage',
+        title: 'Player Bases Cost Half Upkeep',
         description:
-          'Raiding one costs double, online or offline. It is free and comes from the tool cupboard, so place one and auth your team. Raidable bases are exempt.',
+          'A tool cupboard burns half the usual resources, so a week you cannot play every night still ends with your base standing.',
         iconPaths: [
-          'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
-          'M9 12l2 2 4-4',
+          'M4 7h16v13H4z',
+          'M4 7l2-3h12l2 3',
+          'M12 11v5',
+          'M9.5 13.5L12 16l2.5-2.5',
         ],
       },
       {
@@ -107,7 +110,7 @@ export const page = {
       {
         title: 'All-Terrain Snowmobiles',
         description:
-          'Snowmobiles run at full speed in every biome here, not just snow.',
+          'Snowmobiles run at full speed in every biome here, not just snow. Obtain one and have some fun!',
         iconPaths: [
           'M3 19h14a3 3 0 0 0 0-6H9L7 9h5',
           'M3 22h18',
@@ -116,7 +119,8 @@ export const page = {
       },
       {
         title: 'Ten-Minute Crate Hacks',
-        description: 'Hackable locked crates take ten minutes, not fifteen.',
+        description:
+          'Hackable locked crates take ten minutes, not fifteen. Long enough for counterplay, short enough to respect your time.',
         iconPaths: [
           'M10 2h4',
           'M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16z',
@@ -124,9 +128,9 @@ export const page = {
         ],
       },
       {
-        title: 'Full Wipe Every Month',
+        title: 'Two Maps, One Blueprint Wipe',
         description:
-          'Map and blueprints go together, so nothing carries between wipes for anybody.',
+          'The map wipes twice a month and blueprints only once, so the mid-month map is fresh ground you walk onto with everything you have already unlocked.',
         iconPaths: [
           'M4 5h16v16H4z',
           'M4 10h16',

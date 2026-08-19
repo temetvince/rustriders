@@ -80,9 +80,10 @@ components that consume it. Watch two oxlint caps if the page ever grows again:
 a file is limited to 300 lines and to ten dependencies, which is what split the
 content into several modules the last time it got long.
 
-One fact is stated in more than one place, so change it in both: **player bases
-take half damage and raidable bases are exempt** appears on a feature card and
-in the `description` meta tag in [`public/index.html`](public/index.html).
+The wipe cadence is stated in more than one place, so change it in all of them:
+**the map wipes twice a month and blueprints once** appears in the banner deck,
+in two hero chips, on a feature card, and in the `description` meta tag in
+[`public/index.html`](public/index.html).
 
 These two values are the ones most likely to need updating:
 
